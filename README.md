@@ -22,12 +22,31 @@ A Laxa plugin that wraps [spatie/laravel-permission](https://github.com/spatie/l
 ## Requirements
 
 - PHP ^8.3
-- Laxa ^1.0
+- Laxa ^0.2
 - spatie/laravel-permission ^6.0
 
 If you're on an older version of `spatie/laravel-permission`, upgrade first — see [Spatie's upgrade guide](https://spatie.be/docs/laravel-permission/v6/installation-laravel).
 
 ## Installation
+
+This plugin depends on `laxa/laxa`, which is distributed via a private Satis repository. Add the Laxa repository to your application's `composer.json` first (if you haven't already as part of your Laxa setup):
+
+```json
+"repositories": [
+    {
+        "type": "composer",
+        "url": "https://laxa.app"
+    }
+]
+```
+
+Or via the CLI:
+
+```bash
+composer config repositories.laxa '{"type": "composer", "url": "https://laxa.app"}' --file composer.json
+```
+
+Then install the plugin:
 
 ```bash
 composer require laxa/spatie-laravel-permission-plugin

@@ -7,10 +7,19 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 
+### Added
+
+- Standalone test suite. 14 feature tests + 4 cache invalidation tests now live in this repo's `tests/` directory and run via `composer test` (requires Satis auth for `laxa/laxa`).
+- `.github/workflows/tests.yml` — PHP 8.3 / 8.4 × Laravel 13 matrix. Requires a `COMPOSER_AUTH` repository secret to authenticate against the Satis repo.
+- Documented the Laxa Satis repository as a prerequisite in README Installation.
+
+### Changed
+
+- Bumped `laxa/laxa` constraint from `^0.1` to `^0.2`. The v0.2.0 release brings the `Laxa\Testing\TestCase` base class this plugin's tests rely on.
+
 ### Planned for v1.1
 
-- Migrate the Pest test suite from the rexadmin host into this repo's `tests/` directory (blocked on `laxa/laxa` publishing to Packagist).
-- Restore `.github/workflows/tests.yml` once tests live here.
+- 4 Pest 4 browser tests for the dogfood path remain in the rexadmin host. They require the full Laxa frontend build to render Inertia pages and aren't trivially portable to a standalone testbench. v1.1 candidate.
 - F-2 lazy options endpoint (see [FINDINGS.md](FINDINGS.md)).
 
 ## [1.0.0] — 2026-05-12

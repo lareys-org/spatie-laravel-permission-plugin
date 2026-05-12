@@ -12,7 +12,7 @@
     ],
     "require": {
         "php": "^8.3",
-        "laxa/laxa": "^1.0",
+        "laxa/laxa": "^0.2",
         "spatie/laravel-permission": "^6.0"
     },
     "require-dev": {
@@ -24,6 +24,20 @@
             "Laxa\\SpatieLaravelPermissionPlugin\\": "src/"
         }
     },
+    "autoload-dev": {
+        "psr-4": {
+            "Laxa\\SpatieLaravelPermissionPlugin\\Tests\\": "tests/"
+        }
+    },
+    "scripts": {
+        "test": "vendor/bin/pest --compact"
+    },
+    "repositories": [
+        {
+            "type": "composer",
+            "url": "https://laxa.app"
+        }
+    ],
     "extra": {
         "laravel": {
             "providers": [
