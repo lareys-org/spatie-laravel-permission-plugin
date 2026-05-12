@@ -4,15 +4,11 @@ declare(strict_types=1);
 
 namespace Laxa\SpatieLaravelPermissionPlugin;
 
-use Illuminate\Http\Request;
-use Illuminate\Support\Facades\Gate;
-use Laxa\Laxa;
 use Laxa\Plugin\Plugin;
 use Laxa\SpatieLaravelPermissionPlugin\Policies\PermissionPolicy;
 use Laxa\SpatieLaravelPermissionPlugin\Policies\RolePolicy;
 use Laxa\SpatieLaravelPermissionPlugin\Resources\PermissionResource;
 use Laxa\SpatieLaravelPermissionPlugin\Resources\RoleResource;
-use RuntimeException;
 use Spatie\Permission\PermissionRegistrar;
 
 class SpatieLaravelPermissionPlugin extends Plugin
@@ -34,24 +30,24 @@ class SpatieLaravelPermissionPlugin extends Plugin
         return 'Access Control';
     }
 
-    public function menu(Request $request): array
+    public function requires(): array
     {
-        return [];
+        return [PermissionRegistrar::class];
     }
 
-    public function boot(Request $request): void
+    public function resources(): array
     {
-        if (! class_exists(PermissionRegistrar::class)) {
-            throw new RuntimeException(
-                'spatie/laravel-permission is required. Run: composer require spatie/laravel-permission'
-            );
-        }
+        return [$this->roleResource, $this->permissionResource];
+    }
 
-        Laxa::registerResources($this->roleResource, $this->permissionResource);
-
+    public function policies(): array
+    {
         $registrar = app(PermissionRegistrar::class);
-        Gate::policy($registrar->getRoleClass(), $this->rolePolicy);
-        Gate::policy($registrar->getPermissionClass(), $this->permissionPolicy);
+
+        return [
+            $registrar->getRoleClass() => $this->rolePolicy,
+            $registrar->getPermissionClass() => $this->permissionPolicy,
+        ];
     }
 
     /** Use a custom Role resource class. */
