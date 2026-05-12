@@ -29,27 +29,25 @@ If you're on an older version of `spatie/laravel-permission`, upgrade first — 
 
 ## Installation
 
-This plugin depends on `laxa/laxa`, which is distributed via a private Satis repository. Add the Laxa repository to your application's `composer.json` first (if you haven't already as part of your Laxa setup):
+This plugin depends on `laxa/laxa`, which is distributed via a private Satis repository, and the plugin itself is hosted on GitHub. Add both to your application's `composer.json`:
 
 ```json
 "repositories": [
     {
         "type": "composer",
         "url": "https://laxa.app"
+    },
+    {
+        "type": "vcs",
+        "url": "https://github.com/lareys-org/spatie-laravel-permission-plugin"
     }
 ]
-```
-
-Or via the CLI:
-
-```bash
-composer config repositories.laxa '{"type": "composer", "url": "https://laxa.app"}' --file composer.json
 ```
 
 Then install the plugin:
 
 ```bash
-composer require laxa/spatie-laravel-permission-plugin
+composer require laxa/spatie-laravel-permission-plugin:^1.0
 ```
 
 Publish and run the Spatie migrations:
