@@ -4,7 +4,7 @@
 [![Total Downloads](https://img.shields.io/packagist/dt/laxa/spatie-laravel-permission-plugin.svg?style=flat-square)](https://packagist.org/packages/laxa/spatie-laravel-permission-plugin)
 [![License](https://img.shields.io/packagist/l/laxa/spatie-laravel-permission-plugin.svg?style=flat-square)](LICENSE.md)
 
-A Laxa plugin that wraps [spatie/laravel-permission](https://github.com/spatie/laravel-permission), giving you ready-made Role and Permission resources, custom multi-select fields for assigning permissions/roles, and Spatie cache invalidation hooked into the admin UI.
+A [Laxa](https://laxa.app) plugin that wraps [spatie/laravel-permission](https://github.com/spatie/laravel-permission), giving you ready-made Role and Permission resources, custom multi-select fields for assigning permissions/roles, and Spatie cache invalidation hooked into the admin UI.
 
 ## Contents
 
@@ -177,13 +177,13 @@ Spatie caches permissions on first read. When admins create, edit, or delete Rol
 
 ## Testing
 
-The plugin's tests live upstream in the rexadmin reference host while we wait for `laxa/laxa` to publish on Packagist. Suite contents:
+```bash
+composer test
+```
 
-- 14 unit/feature tests covering plugin registration, resource binding, custom fields, and policy auto-discovery
-- 4 integration tests verifying cache invalidation on Role/Permission CRUD
-- 4 Pest 4 browser tests covering the sidebar, Roles/Permissions index pages, and User edit form
+Runs 14 feature tests covering plugin registration, resource binding, custom fields, and policy auto-discovery, plus 4 integration tests for cache invalidation on Role/Permission CRUD. CI runs the suite on PHP 8.3 and 8.4 against Laravel 13.
 
-A standalone `tests/` directory and `composer test` script will land in v1.1, once `laxa/laxa` is installable from Packagist and this repo can boot orchestra/testbench in isolation. Until then, see the [rexadmin host](https://github.com/saifulapm/rexadmin) for the live test suite.
+A small set of Pest 4 browser tests for the dogfood path (sidebar → Roles index → User edit) lives in the Laxa reference application and isn't ported here — they require the full Laxa frontend build to render Inertia pages. Bringing them into this repo is a v1.1 candidate.
 
 ## Changelog
 
