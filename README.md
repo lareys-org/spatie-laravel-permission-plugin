@@ -29,14 +29,10 @@ If you're on an older version of `spatie/laravel-permission`, upgrade first — 
 
 ## Installation
 
-This plugin depends on `laxa/laxa`, which is distributed via a private Satis repository, and the plugin itself is hosted on GitHub. Add both to your application's `composer.json`:
+Add the plugin's GitHub repository to your application's `composer.json`:
 
 ```json
 "repositories": [
-    {
-        "type": "composer",
-        "url": "https://laxa.app"
-    },
     {
         "type": "vcs",
         "url": "https://github.com/lareys-org/spatie-laravel-permission-plugin"
