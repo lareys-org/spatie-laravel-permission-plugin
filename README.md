@@ -22,7 +22,7 @@ A [Laxa](https://laxa.app) plugin that wraps [spatie/laravel-permission](https:/
 ## Requirements
 
 - PHP ^8.3
-- Laxa ^0.2
+- Laxa ^0.3
 - spatie/laravel-permission ^6.0
 
 If you're on an older version of `spatie/laravel-permission`, upgrade first — see [Spatie's upgrade guide](https://spatie.be/docs/laravel-permission/v6/installation-laravel).

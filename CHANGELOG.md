@@ -7,6 +7,12 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 
+## [1.1.0] — 2026-05-12
+
+- Adopt Laxa v0.3 plugin lifecycle: declarative `resources()`, `policies()`, `requires()` arrays replace the imperative `boot(Request)` hook.
+- Missing `spatie/laravel-permission` now surfaces as `Laxa\Exceptions\PluginDependencyException` at plugin registration time with an actionable message, instead of a `RuntimeException` thrown from deep inside the lifecycle.
+- Requires `laxa/laxa: ^0.3`.
+
 ## [1.0.0] — 2026-05-12
 
 - First release. Wraps `spatie/laravel-permission` ^6.0.
@@ -25,5 +31,6 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 - `MorphToManyField` on the Role / Permission edit pages is detail-only. Assign users to a role from the User edit page using `RoleMultiSelectField` instead.
 
-[Unreleased]: https://github.com/lareys-org/spatie-laravel-permission-plugin/compare/v1.0.0...HEAD
+[Unreleased]: https://github.com/lareys-org/spatie-laravel-permission-plugin/compare/v1.1.0...HEAD
+[1.1.0]: https://github.com/lareys-org/spatie-laravel-permission-plugin/compare/v1.0.0...v1.1.0
 [1.0.0]: https://github.com/lareys-org/spatie-laravel-permission-plugin/releases/tag/v1.0.0

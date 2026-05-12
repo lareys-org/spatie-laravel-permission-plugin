@@ -12,7 +12,7 @@
     ],
     "require": {
         "php": "^8.3",
-        "laxa/laxa": "^0.2",
+        "laxa/laxa": "^0.3",
         "spatie/laravel-permission": "^6.0"
     },
     "require-dev": {
