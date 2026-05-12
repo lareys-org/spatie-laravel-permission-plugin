@@ -11,6 +11,8 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 - Add `.github/workflows/tests.yml` — PHP 8.3 / 8.4 × Laravel 13 matrix. Requires a `COMPOSER_AUTH` repository secret to authenticate against the Laxa Satis repository.
 - Bump `laxa/laxa` constraint to `^0.2`.
 - Document the Laxa Satis repository as a prerequisite in README Installation.
+- Refresh the README Testing section now that the suite lives here, and link "Laxa" to `https://laxa.app` in the intro.
+- Bump `actions/checkout` to `v6` so CI runs on the Node.js 24 runtime.
 
 ## [1.0.0] — 2026-05-12
 
